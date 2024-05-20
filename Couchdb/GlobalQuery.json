@@ -1,0 +1,13 @@
+{
+    "_id": "_design/global_queries",
+    "_rev": "6-7eeade8153983c4473d74104bac07c62",
+    "views": {
+        "global": {
+            "map": "function (doc) {\n  if (doc.type === 'fact') {\n\n    emit(doc._id, { 'fact': doc, 'edition_id': doc.edition_id, 'participant_id': doc.participant_id, 'age_group_id': doc.age_group_id });\n  }\n  if (doc.type === 'edition' || doc.type === 'participant' || doc.type === 'agegroup') {\n\n emit(doc._id, { 'dimension': doc });\n  }\n}"
+        }
+    },
+    "language": "javascript",
+    "options": {
+        "partitioned": false
+    }
+}

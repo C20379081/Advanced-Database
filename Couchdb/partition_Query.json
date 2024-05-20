@@ -1,0 +1,13 @@
+{
+    "_id": "_design/partition_query",
+    "_rev": "3-de1d752d448ad478f92cbf92eaedf36c",
+    "views": {
+        "partition_Query": {
+            "map": "function(doc) {\n    if (doc.type === 'fact') {\n emit(doc._id, {\n 'ViewerID': doc.data.ViewerID,\n 'VoteDate': doc.data.VoteDate,\n  'VOTEMODE': doc.data.VOTEMODE,\n });\n  }\n}"
+        }
+    },
+    "language": "javascript",
+    "options": {
+        "partitioned": true
+    }
+}

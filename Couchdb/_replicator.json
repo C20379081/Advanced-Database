@@ -1,0 +1,33 @@
+{
+    "_id": "099a73e0b8ebdb8f5f487a07d145d632",
+    "_rev": "13-1f4e69d2e7bdaa3456946de4b3120908",
+    "user_ctx": {
+        "name": "moose",
+        "roles": [
+            "_admin",
+            "_reader",
+            "_writer"
+        ]
+    },
+    "source": {
+        "url": "http://127.0.0.1:5984/c20379081_db",
+        "headers": {
+            "Authorization": "Basic bW9vc2U6bW9vc2Vz"
+        }
+    },
+    "target": {
+        "url": "http://127.0.0.1:5984/c20379081_db_replicate",
+        "headers": {
+            "Authorization": "Basic bW9vc2U6bW9vc2Vz"
+        }
+    },
+    "create_target": true,
+    "continuous": true,
+    "create_target_params": {
+        "partitioned": true
+    },
+    "owner": "moose",
+    "selector": {
+        "data.VOTEMODE": "Facebook"
+    }
+}

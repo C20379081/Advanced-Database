@@ -1,0 +1,13 @@
+{
+  "_id": "_design/global_query",
+  "_rev": "4-3f72b1489b668d8337e545aa368c6265",
+  "views": {
+    "global": {
+      "map": "function (doc) {\n  if (doc.type === 'fact') {var compositeKey = [\n doc.data.ViewerID,\ndoc.data.VoteDate,\n doc.data.VOTEMODE\n  ];\nemit(compositeKey, {\n'edition_id': doc.edition_id,\n 'participant_id': doc.participant_id,\n      'age_group_id': doc.age_group_id\n    });\n  }\n}"
+    }
+  },
+  "language": "javascript",
+  "options": {
+    "partitioned": false
+  }
+}
