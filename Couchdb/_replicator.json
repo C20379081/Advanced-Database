@@ -12,7 +12,7 @@
     "source": {
         "url": "http://127.0.0.1:5984/c20379081_db",
         "headers": {
-            "Authorization": "Basic bW9vc2U6bW9vc2Vz"
+            "Authorization": "Basic placeholder"
         }
     },
     "target": {
